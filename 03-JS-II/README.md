@@ -157,19 +157,6 @@ if (10 === 9 && 10 > 9) {
 
 El siguiente es el operador "Ó" ("OR"). Está escrito con dos barras verticales (`||`). Determinará si una de las expresiones es `true`. Devolverá `true` si una (o ambas) de las expresiones es` true`. Devolverá `false` si AMBAS expresiones son` false`:
 
-```javascript
-if (100 > 10 || 10 === 10) {
-    console.log('Ambas declaraciones son ciertas, este código se ejecutará');
-}
-
-if (10 === 9 || 10 > 9) {
-    console.log('Una de las declaraciones es true, por lo que || devolverá true y este código se ejecutará');
-}
-
-if (10 === 9 || 1 > 9) {
-    console.log('Ambas declaraciones son falsas, por lo que || devolverá false y este código no se ejecutará');
-}
-```
 
 ### !
 
