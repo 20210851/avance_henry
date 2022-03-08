@@ -59,7 +59,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  palabras.join('');
+  return palabras.join(' ');
 }
 
 
@@ -67,13 +67,13 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  for (var i=0; i<array.length;i++){
+  for (var i=0; i<array.length; i++){
     if(array[i]===elemento){
       return true;
     }
   }
     return false;
-  }
+ }
 
 
 
@@ -93,6 +93,12 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  var suma=0 
+  for(let i = 0 ; i<resultadosTest.length; i++){
+    suma = suma + resultadosTest[i]
+  }
+  promedio=suma/resultadosTest.length
+  return promedio;
 }
 
 
@@ -100,6 +106,13 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  let mayor=0
+  for ( let i=0 ; i<numeros.length; i++) {
+    if (numeros[i]>mayor) {
+      mayor= numeros[i] 
+    }
+  }
+  return mayor  
 }
 
 
@@ -107,20 +120,26 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  for(i=o ; i<arguments.length ; i++){
+  let productoTotal = 1;
+  if ( arguments.length===0 ) {return 0;}
+  if (arguments.length===1) {return arguments[0];}
+  for(let i = 0 ; i<arguments.length ; i++){
     productoTotal= productoTotal * arguments [i]
   }
-    return productoTotal; 
-
-  if ( arguments.length<1 ) return false;
-
+  return productoTotal; 
 }
 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-
+  var contador = 0 
+  for (let i=0 ; i<arreglo.length ; i++){
+    if ( arreglo[i] > 18 ) {
+      contador ++ ;
+    }
+  }
+  return contador  
 }
 
 
@@ -128,11 +147,11 @@ function diaDeLaSemana(numeroDeDia) {
   //Suponga que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente. 
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
-  //Escribe tu código aquí   
-  if(Domingo===1 || Sabado===7 ){
+  //Escribe tu código aquí  
+  if(numeroDeDia===1 || numeroDeDia===7 ){
     return "Es fin de semana"
   }
-    return "Es dia laboral"  
+    return "Es dia Laboral"  
 } 
 
 
